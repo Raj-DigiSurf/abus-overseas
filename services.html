@@ -248,9 +248,9 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
 .fcta:hover{background:var(--blue-dark);transform:translateY(-2px)}
 
 /* Reveal */
-.rv{opacity:1;transform:translateY(0)}
 
-.rv.vis{opacity:1;transform:translateY(0)}
+
+
 
 /* ── TABLET ── */
 @media(max-width:960px){
@@ -682,7 +682,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
 
 <section id="contact">
   <div class="cfl">
-    <div class="rv">
+    <div class="">
       <div class="slbl">Get In Touch</div>
       <h2 class="stitle">Have Questions?<br>We're Here to Help</h2>
       <p class="sdesc">Reach out and one of our visa experts will get back to you within 24 hours.</p>
@@ -691,7 +691,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
       <div class="cd-item"><div class="cd-icon">✉️</div><div><h4>Email</h4><a href="/cdn-cgi/l/email-protection#d0bfa6b5a2a3b5b1a3b1b2a5a390b7bdb1b9bcfeb3bfbd"><span class="__cf_email__" data-cfemail="e58a9380979680849684879096a58288848c89cb868a88">[email&#160;protected]</span></a></div></div>
       <div class="cd-item"><div class="cd-icon">📍</div><div><h4>Office</h4><p>201 Milestone Acropolis, Parlepoint,<br>Surat – 395007, Gujarat, India</p></div></div>
     </div>
-    <div class="cf rv">
+    <div class="cf">
       <h3>Send Us a Message</h3>
       <div class="fr">
         <div class="fg"><label>First Name</label><input type="text" placeholder="Rahul"></div>
@@ -809,11 +809,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
     }, {passive:true});
   });
 
-    // All sections visible by default — no animation needed
-  document.querySelectorAll('.rv').forEach(el => el.classList.add('vis'));
-  obs.unobserve(e.target);
-        }
-      });
+    );
     }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
     rvs.forEach(el => obs.observe(el));
 </script>
