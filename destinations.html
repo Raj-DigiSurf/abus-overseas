@@ -9,15 +9,15 @@
 <meta name="keywords" content="study in Australia, study in Canada, UK student visa, study in USA, study in New Zealand, study in Ireland, study in Dubai, study in Europe, overseas education India">
 <meta name="author" content="ABUS Overseas">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://abus-overseas.github.io/destinations.html">
+<link rel="canonical" href="https://Raj-DigiSurf.github.io/abus-overseas/destinations.html">
 
 <!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ABUS Overseas">
 <meta property="og:title" content="Study Destinations – Australia, Canada, UK, USA & More | ABUS Overseas">
 <meta property="og:description" content="Detailed guides for 8 top study destinations — visa requirements, universities, tuition fees, cost of living and work rights. Expert guidance from ABUS Overseas.">
-<meta property="og:url" content="https://abus-overseas.github.io/destinations.html">
-<meta property="og:image" content="https://abus-overseas.github.io/og-image.jpg">
+<meta property="og:url" content="https://Raj-DigiSurf.github.io/abus-overseas/destinations.html">
+<meta property="og:image" content="https://Raj-DigiSurf.github.io/abus-overseas/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Study Destinations – Australia, Canada, UK, USA & More | ABUS Overseas">
 <meta name="twitter:description" content="Detailed guides for 8 top study destinations — visa requirements, universities, tuition fees, cost of living and work rights. Expert guidance from ABUS Overseas.">
-<meta name="twitter:image" content="https://abus-overseas.github.io/og-image.jpg">
+<meta name="twitter:image" content="https://Raj-DigiSurf.github.io/abus-overseas/og-image.jpg">
 
 <!-- Schema.org Structured Data -->
 <script type="application/ld+json">
@@ -34,9 +34,9 @@
   "@type": "LocalBusiness",
   "name": "ABUS Overseas",
   "description": "Explore top study destinations including Australia, Canada, UK, USA, New Zealand, Ireland, UAE and Europe. Get expert visa guidance, university listings, tuition costs and work rights info.",
-  "url": "https://abus-overseas.github.io/",
-  "logo": "https://abus-overseas.github.io/ABUS.jpeg",
-  "image": "https://abus-overseas.github.io/og-image.jpg",
+  "url": "https://Raj-DigiSurf.github.io/abus-overseas/",
+  "logo": "https://Raj-DigiSurf.github.io/abus-overseas/ABUS.jpeg",
+  "image": "https://Raj-DigiSurf.github.io/abus-overseas/og-image.jpg",
   "telephone": "+91-9979921217",
   "email": "overseasabus@gmail.com",
   "address": {
@@ -75,11 +75,11 @@
     "@type": "OfferCatalog",
     "name": "Visa & Consultancy Services",
     "itemListElement": [
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Student Visa Consultancy"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Work Visa Consultancy"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"University Admissions Assistance"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"IELTS Coaching"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Indian Passport Assistance"}}
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Student Visa Consultancy"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Work Visa Consultancy"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"University Admissions Assistance"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"IELTS Coaching"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Indian Passport Assistance"}
     ]
   }
 }
@@ -230,7 +230,8 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
 .fcta:hover{background:var(--blue-dark);transform:translateY(-2px)}
 
 /* REVEAL */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.rv{opacity:1;transform:translateY(0)}
+
 .rv.vis{opacity:1;transform:translateY(0)}
 
 /* RESPONSIVE */
@@ -877,7 +878,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
 
 <a href="index.html#contact" class="fcta"><span>✈️</span> Free Consultation</a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   const mn = document.getElementById('mn');
   window.addEventListener('scroll', () => mn.classList.toggle('scrolled', window.scrollY > 30));
 
@@ -896,12 +897,11 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
     tabs.forEach(t => t.classList.toggle('active', t.getAttribute('href') === '#' + cur));
   });
 
-  // Reveal
-  const rvs = document.querySelectorAll('.rv');
-  if ('IntersectionObserver' in window) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) { setTimeout(() => e.target.classList.add('vis'), i * 80); obs.unobserve(e.target); }
+    // All sections visible by default — no animation needed
+  document.querySelectorAll('.rv').forEach(el => el.classList.add('vis'));
+  obs.unobserve(e.target); }
       });
     }, { threshold: 0.08 });
-    rvs.forEach(el => obs.o
+</script>
+</body>
+</html>

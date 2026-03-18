@@ -9,15 +9,15 @@
 <meta name="keywords" content="visa consultancy Surat, study abroad India, student visa Australia, Canada PR, UK student visa, IELTS coaching Surat, overseas education consultant, ABUS Overseas">
 <meta name="author" content="ABUS Overseas">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://abus-overseas.github.io/">
+<link rel="canonical" href="https://Raj-DigiSurf.github.io/abus-overseas/">
 
 <!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ABUS Overseas">
 <meta property="og:title" content="ABUS Overseas – Your Path to Global Opportunities">
 <meta property="og:description" content="Expert visa consultancy and overseas education services. 1000+ students guided across Australia, Canada, UK, USA, New Zealand, Ireland and UAE.">
-<meta property="og:url" content="https://abus-overseas.github.io/">
-<meta property="og:image" content="https://abus-overseas.github.io/og-image.jpg">
+<meta property="og:url" content="https://Raj-DigiSurf.github.io/abus-overseas/">
+<meta property="og:image" content="https://Raj-DigiSurf.github.io/abus-overseas/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ABUS Overseas – Your Path to Global Opportunities">
 <meta name="twitter:description" content="Expert visa consultancy and overseas education services. 1000+ students guided across Australia, Canada, UK, USA, New Zealand, Ireland and UAE.">
-<meta name="twitter:image" content="https://abus-overseas.github.io/og-image.jpg">
+<meta name="twitter:image" content="https://Raj-DigiSurf.github.io/abus-overseas/og-image.jpg">
 
 <!-- Schema.org Structured Data -->
 <script type="application/ld+json">
@@ -34,9 +34,9 @@
   "@type": "LocalBusiness",
   "name": "ABUS Overseas",
   "description": "ABUS Overseas provides expert visa consultancy, university admissions, and overseas coaching services. Student visa, work visa, passport assistance. Based in Surat, India.",
-  "url": "https://abus-overseas.github.io/",
-  "logo": "https://abus-overseas.github.io/ABUS.jpeg",
-  "image": "https://abus-overseas.github.io/og-image.jpg",
+  "url": "https://Raj-DigiSurf.github.io/abus-overseas/",
+  "logo": "https://Raj-DigiSurf.github.io/abus-overseas/ABUS.jpeg",
+  "image": "https://Raj-DigiSurf.github.io/abus-overseas/og-image.jpg",
   "telephone": "+91-9979921217",
   "email": "overseasabus@gmail.com",
   "address": {
@@ -75,11 +75,11 @@
     "@type": "OfferCatalog",
     "name": "Visa & Consultancy Services",
     "itemListElement": [
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Student Visa Consultancy"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Work Visa Consultancy"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"University Admissions Assistance"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"IELTS Coaching"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Indian Passport Assistance"}}
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Student Visa Consultancy"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Work Visa Consultancy"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"University Admissions Assistance"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"IELTS Coaching"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Indian Passport Assistance"}
     ]
   }
 }
@@ -165,7 +165,8 @@ section{padding:6rem 7%}
 .section-header{margin-bottom:3.5rem}
 .section-header.centered{text-align:center}
 .section-header.centered .section-desc{margin:0 auto}
-.rv{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.rv{opacity:1;transform:translateY(0)}
+
 .rv.vis{opacity:1;transform:translateY(0)}
 
 /* ── ABOUT ── */
@@ -292,7 +293,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
 .float-cta:hover{background:var(--blue-dark);transform:translateY(-2px)}
 
 /* ── ANIMATIONS ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}
 .hero-badge{animation:fadeUp .7s ease both}
 .hero-title{animation:fadeUp .7s .1s ease both}
 .hero-desc{animation:fadeUp .7s .2s ease both}
@@ -628,7 +629,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
 
 <a href="#contact" class="float-cta"><span>✈️</span> Free Consultation</a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Nav scroll
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30));
@@ -642,13 +643,16 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
     document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
   }
 
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.rv');
-  if ('IntersectionObserver' in window) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('vis'), i * 80);
+      // All sections visible by default — no animation needed
+  document.querySelectorAll('.rv').forEach(el => el.classList.add('vis'));
+  obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+    rvs.forEach(el => obs.observe(el));
+  }
+  // Safety net — show everything after 1.5s no matter what
+  setTimeout(() => rvs.forEach(el => el.classList.add('vis')), 1500);
           obs.unobserve(e.target);
         }
       });
@@ -677,4 +681,6 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
       const timer = setInterval(() => {
         current = Math.min(current + step, target);
         el.textContent = Math.floor(current) + suffix;
-        if (current >= target) clearIn
+</script>
+</body>
+</html>

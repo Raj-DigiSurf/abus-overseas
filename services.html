@@ -9,15 +9,15 @@
 <meta name="keywords" content="student visa consultant, work visa India, business visa Surat, IELTS coaching, university admissions consultant, Indian passport assistance, PTE coaching Surat">
 <meta name="author" content="ABUS Overseas">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://abus-overseas.github.io/services.html">
+<link rel="canonical" href="https://Raj-DigiSurf.github.io/abus-overseas/services.html">
 
 <!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ABUS Overseas">
 <meta property="og:title" content="Expert Visa & Consultancy Services – ABUS Overseas">
 <meta property="og:description" content="From student visas to university admissions and IELTS coaching — complete overseas consultancy services based in Surat, India.">
-<meta property="og:url" content="https://abus-overseas.github.io/services.html">
-<meta property="og:image" content="https://abus-overseas.github.io/og-image.jpg">
+<meta property="og:url" content="https://Raj-DigiSurf.github.io/abus-overseas/services.html">
+<meta property="og:image" content="https://Raj-DigiSurf.github.io/abus-overseas/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Expert Visa & Consultancy Services – ABUS Overseas">
 <meta name="twitter:description" content="From student visas to university admissions and IELTS coaching — complete overseas consultancy services based in Surat, India.">
-<meta name="twitter:image" content="https://abus-overseas.github.io/og-image.jpg">
+<meta name="twitter:image" content="https://Raj-DigiSurf.github.io/abus-overseas/og-image.jpg">
 
 <!-- Schema.org Structured Data -->
 <script type="application/ld+json">
@@ -34,9 +34,9 @@
   "@type": "LocalBusiness",
   "name": "ABUS Overseas",
   "description": "Comprehensive visa services including student visa, work visa, business visa, work permit, tourist visa, Indian passport assistance, university admissions and IELTS coaching.",
-  "url": "https://abus-overseas.github.io/",
-  "logo": "https://abus-overseas.github.io/ABUS.jpeg",
-  "image": "https://abus-overseas.github.io/og-image.jpg",
+  "url": "https://Raj-DigiSurf.github.io/abus-overseas/",
+  "logo": "https://Raj-DigiSurf.github.io/abus-overseas/ABUS.jpeg",
+  "image": "https://Raj-DigiSurf.github.io/abus-overseas/og-image.jpg",
   "telephone": "+91-9979921217",
   "email": "overseasabus@gmail.com",
   "address": {
@@ -75,11 +75,11 @@
     "@type": "OfferCatalog",
     "name": "Visa & Consultancy Services",
     "itemListElement": [
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Student Visa Consultancy"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Work Visa Consultancy"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"University Admissions Assistance"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"IELTS Coaching"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Indian Passport Assistance"}}
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Student Visa Consultancy"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Work Visa Consultancy"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"University Admissions Assistance"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"IELTS Coaching"},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Indian Passport Assistance"}
     ]
   }
 }
@@ -248,7 +248,8 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
 .fcta:hover{background:var(--blue-dark);transform:translateY(-2px)}
 
 /* Reveal */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv{opacity:1;transform:translateY(0)}
+
 .rv.vis{opacity:1;transform:translateY(0)}
 
 /* ── TABLET ── */
@@ -748,7 +749,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
 
 <a href="index.html#contact" class="fcta"><span>✈️</span> Free Consultation</a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Nav scroll
   const mn = document.getElementById('mn');
   window.addEventListener('scroll', () => mn.classList.toggle('scrolled', window.scrollY > 30));
@@ -808,13 +809,13 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
     }, {passive:true});
   });
 
-  // Reveal
-  const rvs = document.querySelectorAll('.rv');
-  if ('IntersectionObserver' in window) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e,i) => {
-        if (e.isIntersecting) { setTimeout(() => e.target.classList.add('vis'), i*80); obs.unobserve(e.target); }
+    // All sections visible by default — no animation needed
+  document.querySelectorAll('.rv').forEach(el => el.classList.add('vis'));
+  obs.unobserve(e.target);
+        }
       });
-    }, {threshold:0.08});
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
     rvs.forEach(el => obs.observe(el));
-  }
+</script>
+</body>
+</html>

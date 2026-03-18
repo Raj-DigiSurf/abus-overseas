@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abus-overseas.github.io/sitemap.xml
+Sitemap: https://Raj-DigiSurf.github.io/abus-overseas/sitemap.xml
