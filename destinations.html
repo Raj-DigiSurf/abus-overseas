@@ -131,6 +131,9 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
 .wa-float:hover{background:#128c4a;transform:translateY(-2px) scale(1.05)}
 .wa-float svg{width:30px;height:30px}
 /* ── RESPONSIVE ── */
+.ccard-hero{height:260px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:1.5rem}
+.ccard-hero img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.ccard-hero>*:not(img){position:relative;z-index:1}
 @media(max-width:960px){.footer-top{grid-template-columns:1fr 1fr;gap:2rem}}
 @media(max-width:768px){
   .nav-links{display:none}
@@ -193,7 +196,7 @@ h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif}
 
 /* Country Card */
 .ccard{border-radius:20px;overflow:hidden;box-shadow:0 6px 32px rgba(26,143,227,.12)}
-.ccard-hero{height:220px;position:relative;display:flex;align-items:flex-end;padding:1.5rem}
+
 .ccard-flag{font-size:4rem;position:absolute;top:1.25rem;right:1.25rem;filter:drop-shadow(0 2px 8px rgba(0,0,0,.2))}
 .ccard-overlay h2{font-size:1.6rem;font-weight:800;color:#fff;line-height:1.2}
 .ccard-overlay .ccard-tag{font-size:.82rem;color:rgba(255,255,255,.85);margin-top:.25rem}
@@ -273,7 +276,7 @@ h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif}
   .cgcard h3{font-size:.88rem}
   .cgcard p{display:none}
   .cs{padding:3rem 5%}
-  .ccard-hero{height:180px}
+  
   .ccard-overlay h2{font-size:1.3rem}
   .tab{padding:.85rem .9rem;font-size:.74rem}
   .btn-p{width:100%;text-align:center;padding:.85rem 1rem}
@@ -295,7 +298,7 @@ h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif}
 .ph h1{font-size:clamp(1.8rem,4vw,3rem);font-weight:800;color:var(--blue-deep);line-height:1.15;margin-bottom:1rem}
 .ph h1 em{font-style:normal;color:var(--blue)}
 .ph p{font-size:1rem;color:var(--muted);line-height:1.75;max-width:600px;margin:0 auto}
-.ccard-hero{position:relative;overflow:hidden}
+
 .ccard-hero img{display:block}
 .ccard-hero>*:not(img){position:relative;z-index:1}
 @media(max-width:768px){.ph{padding:calc(var(--nav-h) + 2rem) 5% 2rem}}

@@ -131,7 +131,11 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
 .wa-float:hover{background:#128c4a;transform:translateY(-2px) scale(1.05)}
 .wa-float svg{width:30px;height:30px}
 /* ── RESPONSIVE ── */
-@media(max-width:960px){.footer-top{grid-template-columns:1fr 1fr;gap:2rem}}
+@media(max-width:960px){.footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+  .si{grid-template-columns:1fr;gap:2.5rem}
+  .si.reverse{direction:ltr}
+  .si.reverse>*{direction:ltr}
+}
 @media(max-width:768px){
   .nav-links{display:none}
   .hamburger{display:flex}
