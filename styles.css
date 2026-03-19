@@ -96,7 +96,6 @@ footer { background: var(--blue-deep); color: rgba(255,255,255,.75); padding: 4r
 .wa-float:hover { background: #128c4a; transform: translateY(-2px) scale(1.05); }
 .wa-float svg { width: 30px; height: 30px; }
 
-
 /* ── SERVICE CARDS ── */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px,1fr)); gap: 1rem; }
 .service-card { background: var(--blue-light); border: 2px solid var(--border); border-radius: 16px; padding: 1.5rem 1.25rem; text-align: center; transition: all .25s; text-decoration: none; color: inherit; display: block; position: relative; overflow: hidden; }
@@ -115,7 +114,6 @@ footer { background: var(--blue-deep); color: rgba(255,255,255,.75); padding: 4r
 .visa-pill .visa-icon { font-size: 2rem; margin-bottom: .75rem; }
 .visa-pill h4 { font-size: .95rem; font-weight: 700; color: var(--blue-deep); }
 .visa-pill p { font-size: .78rem; color: var(--muted); margin-top: .3rem; line-height: 1.5; }
-
 
 /* ── HERO STATS ── */
 .hero-stats { display: flex; gap: 2.5rem; margin-top: 3rem; animation: fadeUp .7s .4s ease both; }
@@ -163,7 +161,6 @@ footer { background: var(--blue-deep); color: rgba(255,255,255,.75); padding: 4r
   .footer-brand p { max-width: 100%; }
 }
 
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.5rem; }
 .visa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px,1fr)); gap: 1rem; }
 
 @media (max-width: 400px) {
