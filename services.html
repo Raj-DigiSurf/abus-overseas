@@ -356,7 +356,11 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
 </style>
 </head>
 <body>
+<<<<<<< HEAD
 <div id="site-header" style="height:var(--nav-h,72px)"></div>
+=======
+<div id="site-header"></div>
+>>>>>>> parent of 4860d5d (commit)
 
 
 <div class="ph">  <h1>Expert Visa &amp; <em>Consultancy Services</em></h1>
@@ -741,6 +745,53 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
 <a href="index.html#contact" class="fcta"><span>✈️</span> Free Consultation</a>
 
 
+<<<<<<< HEAD
+=======
+  // ── CAROUSEL ──
+  const carState = {};
+  function initCarousels() {
+    document.querySelectorAll('[id^="carousel-"]').forEach(w => {
+    const sid = w.id.replace('carousel-', '');
+    const slides = w.querySelectorAll('.cslide');
+    carState[sid] = { cur: 0, total: slides.length };
+    });
+  }
+  initCarousels();
+  function goTo(sid, idx) {
+    const s = carState[sid];
+    if (!s) return;
+    s.cur = Math.max(0, Math.min(idx, s.total - 1));
+    renderCar(sid);
+  }
+  function move(sid, dir) {
+    if (carState[sid]) goTo(sid, carState[sid].cur + dir);
+  }
+  function renderCar(sid) {
+    const s     = carState[sid];
+    const track = document.getElementById('track-' + sid);
+    const dotsEl= document.getElementById('dots-' + sid);
+    const prev  = document.getElementById('prev-' + sid);
+    const next  = document.getElementById('next-' + sid);
+    if (!track || !s) return;
+    track.style.transform = `translateX(-${s.cur * 100}%)`;
+    if (dotsEl) dotsEl.querySelectorAll('.cd').forEach((d,i) => d.classList.toggle('ca', i===s.cur));
+    if (prev) prev.disabled = s.cur === 0;
+    if (next) next.disabled = s.cur === s.total - 1;
+  }
+  // Touch swipe
+  document.querySelectorAll('[id^="carousel-"]').forEach(w => {
+    const sid = w.id.replace('carousel-', '');
+    let sx = 0, sy = 0;
+    w.addEventListener('touchstart', e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, {passive:true});
+    w.addEventListener('touchend', e => {
+      const dx = sx - e.changedTouches[0].clientX;
+      const dy = Math.abs(sy - e.changedTouches[0].clientY);
+      if (Math.abs(dx) > 40 && Math.abs(dx) > dy) move(sid, dx > 0 ? 1 : -1);
+    }, {passive:true});
+  });
+
+</script>
+>>>>>>> parent of 4860d5d (commit)
 <div id="site-footer"></div>
 <script src="components.js"></script>
 <script>
