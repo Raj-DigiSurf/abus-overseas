@@ -216,7 +216,7 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
 /* Service images */
 .svc-img{border-radius:16px;overflow:hidden;margin-bottom:1rem;aspect-ratio:16/9;max-height:260px}
 .svc-img img{width:100%;height:100%;object-fit:cover;display:block}
-@media(max-width:640px){.svc-img{aspect-ratio:16/9;max-height:200px}}
+@media(max-width:640px){.svc-img{aspect-ratio:16/9;max-height:200px}
 
 /* Process Card */
 .pc{background:#fff;border-radius:20px;box-shadow:0 4px 28px rgba(26,143,227,.1);overflow:hidden}
@@ -291,7 +291,7 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
 .fsub:hover{background:var(--blue-dark);transform:translateY(-2px)}
 
 /* Footer */
-.ft{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.1)}
+
 .flogo{display:flex;align-items:center;text-decoration:none;margin-bottom:1rem}
 .flogo img{height:48px;width:auto;border-radius:8px}
 .fb p{font-size:.85rem;line-height:1.7;max-width:260px}
@@ -321,7 +321,7 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
   .si.reverse{direction:ltr}
   .si.reverse>*{direction:ltr}
   .cfl{grid-template-columns:1fr;gap:2.5rem}
-  .ft{grid-template-columns:1fr 1fr;gap:2rem}
+  
   .stb{padding:0 3%}
   .tab{padding:.9rem 1rem;font-size:.8rem}
 }
@@ -357,7 +357,7 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
   #contact{padding:3rem 5%}
   .cf{padding:1.5rem 1.1rem;border-radius:16px}
   .fr{grid-template-columns:1fr}
-  .ft{grid-template-columns:1fr;gap:1.75rem}
+  
   .fb p{max-width:100%}
   .fbot{flex-direction:column;gap:.6rem;text-align:center;font-size:.75rem}
   .fcta{bottom:1.2rem;right:1.2rem;padding:.65rem 1rem;font-size:.78rem}
@@ -374,7 +374,7 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
 </style>
 </head>
 <body>
-<div id="site-header"></div>
+<div id="site-header" style="min-height:var(--nav-h,72px)"></div>
 
 
 <div class="ph">
@@ -772,7 +772,11 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
     carState[sid] = { cur: 0, total: slides.length };
     });
   }
-  initCarousels();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousels);
+  } else {
+    initCarousels();
+  }
   function goTo(sid, idx) {
     const s = carState[sid];
     if (!s) return;
