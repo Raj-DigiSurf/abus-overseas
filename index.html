@@ -45,7 +45,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 <style>
-.hamburger{display:flex}.nav-cta{display:none}.nav-logo img{height:52px}.footer-top{grid-template-columns:1fr 1fr;gap:2rem}}
+.hamburger{display:none}.nav-cta{display:none}.nav-logo img{height:52px}.footer-top{grid-template-columns:1fr 1fr;gap:2rem}}
 footer{padding:3rem 5% 2rem}.footer-bottom{flex-direction:column;text-align:center}}
 }
 
@@ -104,7 +104,7 @@ footer{padding:3rem 5% 2rem}.footer-bottom{flex-direction:column;text-align:cent
 .dest-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
 .dest-card{border-radius:20px;overflow:hidden;position:relative;cursor:pointer;text-decoration:none;display:block;box-shadow:0 4px 20px rgba(10,79,140,.12);transition:transform .3s,box-shadow .3s}
 .dest-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(10,79,140,.22)}
-.dest-card-img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .4s}
+.dest-card-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transition:transform .4s}
 .dest-card:hover .dest-card-img{transform:scale(1.05)}
 .dest-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,30,60,.85) 0%,rgba(10,30,60,.2) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem 1.25rem}
 .dest-card-flag{width:28px;height:21px;border-radius:3px;margin-bottom:.6rem;box-shadow:0 2px 6px rgba(0,0,0,.3)}
@@ -179,7 +179,9 @@ footer{padding:3rem 5% 2rem}.footer-bottom{flex-direction:column;text-align:cent
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){.dest-grid{grid-template-columns:repeat(4,1fr)}
 }
-@media(max-width:960px){#hero{grid-template-columns:1fr;padding:calc(var(--nav-h)+2.5rem) 6% 4rem;gap:3rem;min-height:auto}
+@media(max-width:960px){#hero{grid-template-columns:1fr;padding:calc(var(--nav-h)+2.5rem) 6% 4rem;gap:3rem;min-height:auto
+  .dest-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
+}
   
   
   .hero-desc{margin:0 auto 2rem}
@@ -210,10 +212,7 @@ footer{padding:3rem 5% 2rem}.footer-bottom{flex-direction:column;text-align:cent
   .hero-stats{gap:1.5rem;justify-content:space-around;flex-wrap:wrap}
   .hero-stat-num{font-size:1.5rem}
   .dest-grid{grid-template-columns:1fr 1fr;gap:.9rem}
-  .dest-card-img{aspect-ratio:3/4}
-  .dest-card-name{font-size:1rem}
-  .process-steps{grid-template-columns:1fr;gap:1.5rem}
-  .step-num{width:52px;height:52px;font-size:1.2rem}
+  .dest-card-img{aspect-ratio:16/9}
   .visa-grid{grid-template-columns:1fr 1fr;gap:.75rem}
   .stats-inner{grid-template-columns:1fr 1fr;gap:1.25rem;padding:2rem 5%;border-radius:18px}
   .stat-big{font-size:2rem}
@@ -227,16 +226,11 @@ footer{padding:3rem 5% 2rem}.footer-bottom{flex-direction:column;text-align:cent
 }
 @media(max-width:400px){.dest-grid{grid-template-columns:1fr}
   .dest-card-img{aspect-ratio:16/9}
-  .hero-title{font-size:1.75rem}
-  .hero-stats{flex-direction:column;align-items:center;gap:.75rem}
   .visa-grid{grid-template-columns:1fr}
   .stats-inner{grid-template-columns:1fr}
   .testimonials-grid{grid-template-columns:1fr}
 }
-</style>
-</head>
-<body>
-<div id="site-header" style="height:var(--nav-h,72px)"></div>
+</style>ar(--nav-h,72px)"></div>
 
 <!-- HERO -->
 <section id="hero">
@@ -290,15 +284,15 @@ footer{padding:3rem 5% 2rem}.footer-bottom{flex-direction:column;text-align:cent
     <p class="section-desc">Comprehensive consultancy and visa services to help you take the next step toward your global ambitions.</p>
   </div>
   <div class="services-grid">
-    <a href="services.html#student-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">🎓</div><h3>Student Visa</h3><p>Expert guidance for international student visa applications, documentation review, and interview preparation.</p></div>
-    <a href="services.html#work-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">💼</div><h3>Work Visa</h3><p>Explore global career opportunities with professional support for work visa applications and documentation.</p></div>
-    <a href="services.html#business-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">🏢</div><h3>Business Visa</h3><p>Expand your professional reach with seamless assistance for international business visa applications.</p></div>
-    <a href="services.html#work-permit" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">📋</div><h3>Work Permit</h3><p>Secure legal authorization to work abroad with expert guidance on international work permit applications.</p></div>
-    <a href="services.html#tourist-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">✈️</div><h3>Tourist Visa</h3><p>Travel the world with confidence through reliable assistance for tourist visa applications.</p></div>
-    <a href="services.html#admissions" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">🧭</div><h3>University Admissions</h3><p>From shortlisting universities to crafting applications and SOPs — we maximise your chances of admission.</p></div>
-    <a href="services.html#passport" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">📝</div><h3>Coaching &amp; Test Prep</h3><p>Dedicated coaching for IELTS, TOEFL, PTE, and other language proficiency exams.</p></div>
+    <a href="services.html#student-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">🎓</div><h3>Student Visa</h3><p>Expert guidance for international student visa applications, documentation review, and interview preparation.</p></a>
+    <a href="services.html#work-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">💼</div><h3>Work Visa</h3><p>Explore global career opportunities with professional support for work visa applications and documentation.</p></a>
+    <a href="services.html#business-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">🏢</div><h3>Business Visa</h3><p>Expand your professional reach with seamless assistance for international business visa applications.</p></a>
+    <a href="services.html#work-permit" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">📋</div><h3>Work Permit</h3><p>Secure legal authorization to work abroad with expert guidance on international work permit applications.</p></a>
+    <a href="services.html#tourist-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">✈️</div><h3>Tourist Visa</h3><p>Travel the world with confidence through reliable assistance for tourist visa applications.</p></a>
+    <a href="services.html#admissions" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">🧭</div><h3>University Admissions</h3><p>From shortlisting universities to crafting applications and SOPs — we maximise your chances of admission.</p></a>
+    <a href="services.html#passport" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">📝</div><h3>Coaching &amp; Test Prep</h3><p>Dedicated coaching for IELTS, TOEFL, PTE, and other language proficiency exams.</p></a>
     <a href="services.html#passport" class="service-card" style="text-decoration:none;color:inherit"><div class="service-icon">🛂</div><h3>Indian Passport</h3><p>Hassle-free passport services for new applications and renewals starting at ₹1,999.</p></a>
-  </div>
+  </a>
 </section>
 
 <!-- DESTINATIONS -->
