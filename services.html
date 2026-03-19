@@ -93,56 +93,13 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
-
 :root{--nav-h:60px}
 
-/* ── NAV ── */
-nav#main-nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5%;z-index:1000;transition:box-shadow .3s}
-nav#main-nav.scrolled{box-shadow:0 4px 30px rgba(26,143,227,.1)}
-.nav-logo{display:flex;align-items:center;text-decoration:none}
-.nav-logo img{height:64px;width:auto;transition:opacity .2s}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{text-decoration:none;font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s;position:relative;padding-bottom:4px}
-.nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transition:transform .25s;transform-origin:left}
-.nav-links a:hover,.nav-links a.active{color:var(--blue)}
-.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
-.nav-cta{background:var(--blue);color:#fff;padding:.55rem 1.3rem;border-radius:100px;font-weight:600;font-size:.85rem;text-decoration:none;transition:background .2s,transform .15s;white-space:nowrap}
-.nav-cta:hover{background:var(--blue-dark);transform:translateY(-1px)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;border:none;background:transparent}
-.hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s}
-.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
-.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-menu{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:#fff;padding:0 7%;display:none;flex-direction:column;z-index:999;overflow-y:auto;box-shadow:0 4px 30px rgba(0,0,0,.1)}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-size:1.05rem;font-weight:600;color:var(--text);text-decoration:none;padding:1rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;transition:color .2s}
-.mobile-menu a:hover{color:var(--blue)}
-.mobile-menu a::after{content:'›';color:var(--blue);font-size:1.4rem;font-weight:300}
-.mobile-menu a.mc{margin-top:1.5rem;background:var(--blue);color:#fff;padding:1rem 1.5rem;border-radius:100px;justify-content:center;font-family:"Plus Jakarta Sans",sans-serif;box-shadow:0 4px 16px rgba(26,143,227,.3);border:none}
-.mobile-menu a.mc::after{display:none}
-.mobile-menu a.mc:hover{background:var(--blue-dark)}
-/* ── FOOTER ── */
-footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2rem}
-.footer-top{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.1)}
-.footer-logo{display:flex;align-items:center;text-decoration:none;margin-bottom:1rem}
-.footer-logo img{height:52px;width:auto;border-radius:8px}
-.footer-brand p{font-size:.85rem;line-height:1.7;max-width:260px}
-.footer-social{display:flex;gap:.75rem;margin-top:1.25rem}
-.social-btn{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.9rem;transition:background .2s,transform .15s}
-.social-btn:hover{background:var(--blue);transform:translateY(-2px)}
-.footer-col h5{font-size:.8rem;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.12em;margin-bottom:1.1rem}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
-.footer-col ul a{font-size:.82rem;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s}
-.footer-col ul a:hover{color:#fff}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;font-size:.78rem;color:rgba(255,255,255,.5)}
 /* ── FLOAT CTA ── */
 .float-cta{position:fixed;bottom:2rem;right:2rem;z-index:900;background:var(--blue);color:#fff;padding:.8rem 1.4rem;border-radius:100px;font-weight:700;font-size:.85rem;text-decoration:none;box-shadow:0 8px 28px rgba(26,143,227,.45);display:flex;align-items:center;gap:.5rem;transition:all .2s}
 .float-cta:hover{background:var(--blue-dark);transform:translateY(-2px)}
-/* ── WHATSAPP FLOAT ── */
-.wa-float{position:fixed;bottom:2rem;left:2rem;z-index:900;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(37,211,102,.45);transition:all .2s;text-decoration:none}
-.wa-float:hover{background:#128c4a;transform:translateY(-2px) scale(1.05)}
-.wa-float svg{width:30px;height:30px}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
 h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
@@ -150,36 +107,8 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5%;z-index:1000;transition:box-shadow .3s}
 nav.scrolled{box-shadow:0 4px 30px rgba(26,143,227,.1)}
-.nav-logo{display:flex;align-items:center;text-decoration:none}
-.nav-logo img{height:48px;width:auto}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{text-decoration:none;font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s;position:relative;padding-bottom:4px}
-.nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transition:transform .25s;transform-origin:left}
-.nav-links a:hover,.nav-links a.active{color:var(--blue)}
-.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
-.nav-cta{background:var(--blue);color:#fff;padding:.55rem 1.3rem;border-radius:100px;font-weight:600;font-size:.85rem;text-decoration:none;transition:background .2s,transform .15s;white-space:nowrap}
-.nav-cta:hover{background:var(--blue-dark);transform:translateY(-1px)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;border:none;background:transparent}
-.hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s}
-.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
-.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-menu{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:#fff;padding:0 5%;display:none;flex-direction:column;z-index:999;overflow-y:auto;box-shadow:0 4px 30px rgba(0,0,0,.1)}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-size:1.05rem;font-weight:600;color:var(--text);text-decoration:none;padding:1rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;transition:color .2s}
-.mobile-menu a:hover{color:var(--blue)}
-.mobile-menu a::after{content:'›';color:var(--blue);font-size:1.4rem;font-weight:300}
-.mobile-menu a.mc{margin-top:1.5rem;background:var(--blue);color:#fff;padding:1rem 1.5rem;border-radius:100px;justify-content:center;box-shadow:0 4px 16px rgba(26,143,227,.3);border:none}
-.mobile-menu a.mc::after{display:none}
-.mobile-menu a.mc:hover{background:var(--blue-dark)}
 
 /* MOBILE MENU */
-.mm{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:#fff;padding:1rem 7% 2rem;display:none;flex-direction:column;z-index:999;overflow-y:auto}
-.mm.open{display:flex}
-.mm a{font-size:1.1rem;font-weight:600;color:var(--text);text-decoration:none;padding:1rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.mm a::after{content:'›';color:var(--blue);font-size:1.4rem}
-.mm a.mc{margin-top:1.5rem;background:var(--blue);color:#fff;padding:1rem 1.5rem;border-radius:100px;justify-content:center;box-shadow:0 4px 16px rgba(26,143,227,.3)}
-.mm a.mc::after{display:none}
 
 /* PAGE HERO */
 .ph{padding:calc(var(--nav-h) + 4rem) 7% 4rem;background:linear-gradient(135deg,var(--off-white),#dceffe);position:relative;overflow:hidden;text-align:center}
@@ -295,7 +224,6 @@ nav.scrolled{box-shadow:0 4px 30px rgba(26,143,227,.1)}
 .fsub:hover{background:var(--blue-dark);transform:translateY(-2px)}
 
 /* Footer */
-footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2rem}
 .ft{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.1)}
 .flogo{display:flex;align-items:center;text-decoration:none;margin-bottom:1rem}
 .flogo img{height:48px;width:auto;border-radius:8px}
@@ -321,14 +249,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
 /* ── TABLET ── */
 /* ── MOBILE ── */
 /* ── SMALL PHONES ── */
-nav#main-nav{padding:0 5%}
-  .nav-logo img{height:48px}
-  .mobile-menu{padding:0 5%}
-  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
-  .footer-bottom{flex-direction:column;gap:.5rem;text-align:center}
-  footer{padding:3rem 5% 2rem}
   .float-cta{bottom:1.2rem;right:1.2rem;padding:.65rem 1rem;font-size:.78rem}
-  .wa-float{bottom:1.2rem;left:1.2rem;width:48px;height:48px}
 .hb{display:flex}
   .si{grid-template-columns:1fr;gap:2.5rem}
   .si.reverse{direction:ltr}
@@ -391,7 +312,6 @@ nav#main-nav{padding:0 5%}
   .si.reverse>*{direction:ltr}
   .cfl{grid-template-columns:1fr;gap:2.5rem}
 }
-  .nav-cta{display:none}
   .si{grid-template-columns:1fr;gap:2.5rem}
   .si.reverse{direction:ltr}
   .si.reverse>*{direction:ltr}
@@ -402,9 +322,6 @@ nav#main-nav{padding:0 5%}
 }
 
 @media(max-width:768px){
-  .nav-links{display:none}
-  .hamburger{display:flex}
-  .nav-cta{display:none}
 }
 
 @media(max-width:640px){
@@ -442,7 +359,6 @@ nav#main-nav{padding:0 5%}
   .ft{grid-template-columns:1fr;gap:1.75rem}
   .fb p{max-width:100%}
   .fbot{flex-direction:column;gap:.6rem;text-align:center;font-size:.75rem}
-  footer{padding:3rem 5% 2rem}
   .fcta{bottom:1.2rem;right:1.2rem;padding:.65rem 1rem;font-size:.78rem}
   .svc-img{aspect-ratio:16/9;max-height:200px}
 
@@ -546,8 +462,6 @@ nav#main-nav{padding:0 5%}
 }
 
 @media(max-width:480px){
-  .footer-top{grid-template-columns:1fr;gap:1.75rem}
-  .footer-brand p{max-width:100%}
 }
 
 @media(max-width:380px){
@@ -557,11 +471,11 @@ nav#main-nav{padding:0 5%}
   .cw{padding:1rem 1rem 0}
   .cc{padding:.5rem 1rem .85rem}
 }
-
 </style>
 </head>
 <body>
-<div id="site-header" style="min-height:var(--nav-h,72px)"></div><div class="ph">
+<div id="site-header" style="height:var(--nav-h,72px)"></div>
+<div class="ph">
   <h1>Expert Visa &amp; <em>Consultancy Services</em></h1>
   <p>From student visas to work permits, passport assistance to university admissions — we guide you through every step with transparency, expertise, and care.</p>
 </div>
@@ -915,7 +829,7 @@ nav#main-nav{padding:0 5%}
       <p class="sdesc">Reach out and one of our visa experts will get back to you within 24 hours.</p>
       <br>
       <div class="cd-item"><div class="cd-icon">📞</div><div><h4>Phone</h4><a href="tel:+919979921217">+91 99799 21217</a><br><a href="tel:+918160380337">+91 81603 80337</a></div></div>
-      <div class="cd-item"><div class="cd-icon">✉️</div><div><h4>Email</h4><a href="/cdn-cgi/l/email-protection#4b243d2e39382e2a382a293e380b2c262a222765282426"><span class="__cf_email__" data-cfemail="fe91889b8c8d9b9f8d9f9c8b8dbe99939f9792d09d9193">[email&#160;protected]</span></a></div></div>
+      <div class="cd-item"><div class="cd-icon">✉️</div><div><h4>Email</h4><a href="/cdn-cgi/l/email-protection#93fce5f6e1e0f6f2e0f2f1e6e0d3f4fef2faffbdf0fcfe"><span class="__cf_email__" data-cfemail="f59a8390878690948694978086b59298949c99db969a98">[email&#160;protected]</span></a></div></div>
       <div class="cd-item"><div class="cd-icon">📍</div><div><h4>Office</h4><p>201 Milestone Acropolis, Parlepoint,<br>Surat – 395007, Gujarat, India</p></div></div>
     </div>
     <div class="cf">
@@ -943,59 +857,13 @@ nav#main-nav{padding:0 5%}
 
 <a href="index.html#contact" class="fcta"><span>✈️</span> Free Consultation</a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+
+
+
+
 <div id="site-footer"></div>
-<script src="components.js"></script>
-<script>
-  // ── NAV ──
-  window.addEventListener('scroll', () => {
-    const nav = document.getElementById('main-nav');
-    if (nav) nav.classList.toggle('scrolled', window.scrollY > 30);
-  }, { passive: true });
-  function toggleMenu() {
-    const menu = document.getElementById('mobile-menu');
-    const hb = document.getElementById('hamburger');
-    if (!menu || !hb) return;
-    const isOpen = menu.classList.toggle('open');
-    hb.classList.toggle('active', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  }
-  function handleSubmit(btn) {
-    btn.textContent = '✅ Message Sent! We\'ll be in touch within 24 hours.';
-    btn.style.background = '#27ae60';
-    btn.disabled = true;
-  }
-  // ── TAB SCROLL-SPY ──
-  (function() {
-    const tabs = document.querySelectorAll('.tab');
-    const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 72;
-    const tabBarH = document.querySelector('.stw') ? document.querySelector('.stw').offsetHeight : 48;
-    const offset = navH + tabBarH + 16;
-  function goTo(sid, idx) {
-    const s = state[sid]; if (!s) return;
-    s.cur = Math.max(0, Math.min(idx, s.total - 1));
-    render(sid);
-  }
-  function move(sid, dir) { const s = state[sid]; if (s) goTo(sid, s.cur + dir); }
-  function render(sid) {
-    const s = state[sid];
-    const track = document.getElementById('track-' + sid);
-    const dots  = document.getElementById('dots-' + sid);
-    const prev  = document.getElementById('prev-' + sid);
-    const next  = document.getElementById('next-' + sid);
-    if (!track) return;
-    track.style.transform = `translateX(-${s.cur * 100}%)`;
-    dots.querySelectorAll('.cd').forEach((d,i) => d.classList.toggle('ca', i === s.cur));
-    prev.disabled = s.cur === 0;
-    next.disabled = s.cur === s.total - 1;
-  }
-  // Swipe
-  document.querySelectorAll('[id^="carousel-"]').forEach(w => {
-    const sid = w.id.replace('carousel-','');
-    let sx = 0;
-    w.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive:true});
-    w.addEventListener
-<div id="site-footer"></div>
+<script src="main.js"></script>
 <script src="components.js"></script>
 </body>
 </html>
