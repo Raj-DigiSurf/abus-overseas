@@ -96,6 +96,24 @@ footer { background: var(--blue-deep); color: rgba(255,255,255,.75); padding: 4r
 .wa-float:hover { background: #128c4a; transform: translateY(-2px) scale(1.05); }
 .wa-float svg { width: 30px; height: 30px; }
 
+
+/* ── SERVICE CARDS ── */
+.service-card { background: #fff; border-radius: 20px; padding: 2rem 1.75rem; box-shadow: 0 2px 16px rgba(26,143,227,.07); transition: transform .25s, box-shadow .25s; position: relative; overflow: hidden; text-decoration: none; color: inherit; display: block; }
+.service-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg,var(--blue),var(--blue-mid)); transform: scaleX(0); transition: transform .3s; transform-origin: left; }
+.service-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(26,143,227,.15); }
+.service-card:hover::after { transform: scaleX(1); }
+.service-icon { width: 54px; height: 54px; background: var(--blue-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 1.2rem; }
+.service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--blue-deep); margin-bottom: .5rem; }
+.service-card p { font-size: .875rem; color: var(--muted); line-height: 1.7; }
+
+/* ── VISA PILLS ── */
+.visa-pill { background: var(--blue-light); border: 2px solid var(--border); border-radius: 16px; padding: 1.5rem 1.25rem; text-align: center; transition: all .25s; text-decoration: none; color: inherit; display: block; }
+.visa-pill:hover { background: var(--blue); border-color: var(--blue); transform: translateY(-3px); text-decoration: none; }
+.visa-pill:hover h4, .visa-pill:hover p { color: #fff; }
+.visa-pill .visa-icon { font-size: 2rem; margin-bottom: .75rem; }
+.visa-pill h4 { font-size: .95rem; font-weight: 700; color: var(--blue-deep); }
+.visa-pill p { font-size: .78rem; color: var(--muted); margin-top: .3rem; line-height: 1.5; }
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -132,3 +150,6 @@ footer { background: var(--blue-deep); color: rgba(255,255,255,.75); padding: 4r
   .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
   .footer-brand p { max-width: 100%; }
 }
+
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.5rem; }
+.visa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px,1fr)); gap: 1rem; }
