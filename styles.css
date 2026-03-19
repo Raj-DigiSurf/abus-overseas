@@ -54,7 +54,7 @@ section { padding: 6rem 7%; }
 nav#main-nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(255,255,255,.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; z-index: 1000; transition: box-shadow .3s; }
 nav#main-nav.scrolled { box-shadow: 0 4px 30px rgba(26,143,227,.1); }
 .nav-logo { display: flex; align-items: center; text-decoration: none; }
-.nav-logo img { height: 68px; width: auto; transition: opacity .2s; }
+.nav-logo img { height: 72px; width: auto; transition: opacity .2s; }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a { text-decoration: none; font-size: .875rem; font-weight: 500; color: var(--muted); transition: color .2s; position: relative; padding-bottom: 4px; }
 .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--blue); transform: scaleX(0); transition: transform .25s; }
@@ -130,7 +130,7 @@ footer { background: var(--blue-deep); color: rgba(255,255,255,.75); padding: 4r
   .nav-links  { display: none; }
   .hamburger  { display: flex; }
   .nav-cta    { display: none; }
-  .nav-logo img { height: 52px; }
+  .nav-logo img { height: 62px; }
   nav#main-nav  { padding: 0 4%; }
   section       { padding: 5rem 5%; }
   .footer-top   { grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -145,7 +145,7 @@ footer { background: var(--blue-deep); color: rgba(255,255,255,.75); padding: 4r
 @media (max-width: 640px) {
   :root { --nav-h: 60px; }
   nav#main-nav { padding: 0 4%; }
-  .nav-logo img { height: 50px; }
+  .nav-logo img { height: 58px; }
   section { padding: 3.5rem 4%; }
   .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
   .footer-brand p { max-width: 100%; }
