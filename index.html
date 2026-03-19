@@ -95,133 +95,6 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
 /* ── RESPONSIVE NAV/FOOTER ── */
 @media(max-width:960px){.nav-links{display:none}.hamburger{display:flex}.nav-cta{display:none}.nav-logo img{height:52px}.footer-top{grid-template-columns:1fr 1fr;gap:2rem}}
 @media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr;gap:2rem}footer{padding:3rem 5% 2rem}.footer-bottom{flex-direction:column;text-align:center}.wa-float{bottom:1.2rem;left:1.2rem;width:48px;height:48px}}
-@media(max-width:480px){.footer-top{grid-template-columns:1fr;gap:1.5rem}}
-
-/* ── PAGE STYLES ── */
-/* ── PAGE VARIABLES & RESET ── */
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
-h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
-img{max-width:100%;display:block}
-
-/* ── SHARED ── */
-section{padding:6rem 7%}
-.section-label{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;color:var(--blue);margin-bottom:.75rem}
-.section-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:var(--blue-deep);line-height:1.15;margin-bottom:1rem}
-.section-desc{font-size:1rem;color:var(--muted);line-height:1.75;max-width:560px}
-.section-header{margin-bottom:3.5rem}
-.section-header.centered{text-align:center}
-.section-header.centered .section-desc{margin:0 auto}
-.reveal{opacity:1;transform:none}
-
-.btn-primary{display:inline-block;background:var(--blue);color:#fff;padding:.8rem 2rem;border-radius:100px;font-weight:700;font-size:.95rem;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 6px 24px rgba(26,143,227,.35)}
-.btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 10px 30px rgba(26,143,227,.4)}
-.btn-secondary{display:inline-block;background:transparent;color:var(--blue-dark);padding:.8rem 2rem;border-radius:100px;font-weight:600;font-size:.95rem;text-decoration:none;border:2px solid var(--blue);cursor:pointer;transition:all .2s}
-.btn-secondary:hover{background:var(--blue);color:#fff}
-
-/* ── HERO ── */
-#hero{min-height:90vh;padding-top:var(--nav-h);display:flex;align-items:center;padding-left:7%;padding-right:7%;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--off-white) 0%,#dceffe 100%)}
-.hero-bg span{position:absolute;border-radius:50%;pointer-events:none}
-.hero-bg span:nth-child(1){width:600px;height:600px;right:-100px;top:-100px;background:radial-gradient(circle,rgba(26,143,227,.12),transparent 70%)}
-.hero-bg span:nth-child(2){width:400px;height:400px;left:20%;bottom:0;background:radial-gradient(circle,rgba(26,143,227,.08),transparent 70%)}
-.hero-content{position:relative;z-index:1;max-width:680px}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(26,143,227,.1);color:var(--blue-dark);border:1px solid rgba(26,143,227,.25);padding:.35rem .9rem;border-radius:100px;font-size:.8rem;font-weight:500;margin-bottom:1.5rem;animation:fadeUp .7s ease both}
-.hero-badge::before{content:'✈';font-size:.85rem}
-.hero-title{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1.1;color:var(--blue-deep);margin-bottom:1.25rem;animation:fadeUp .7s .1s ease both}
-.hero-title em{font-style:normal;color:var(--blue)}
-.hero-desc{font-size:1.05rem;color:var(--muted);line-height:1.7;max-width:480px;margin-bottom:2rem;animation:fadeUp .7s .2s ease both}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .7s .3s ease both}
-.hero-stats{display:flex;gap:2.5rem;margin-top:3rem;animation:fadeUp .7s .4s ease both}
-.hero-stat-num{font-size:1.8rem;font-weight:800;color:var(--blue);line-height:1}
-.hero-stat-label{font-size:.78rem;color:var(--muted);margin-top:.2rem}
-
-/* ── ABOUT ── */
-#about{background:var(--white);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.about-image-block{background:linear-gradient(135deg,var(--blue-deep),var(--blue));border-radius:24px;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.about-text-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
-.about-text-overlay h3{font-size:1.8rem;color:#fff;font-weight:800;margin-bottom:.5rem}
-.about-text-overlay p{color:rgba(255,255,255,.8);font-size:.95rem;line-height:1.65}
-.about-badge-float{position:absolute;bottom:-20px;right:-20px;background:#fff;border-radius:16px;padding:1rem 1.4rem;box-shadow:0 8px 30px rgba(26,143,227,.2);text-align:center}
-.about-badge-float strong{display:block;font-size:1.5rem;color:var(--blue);font-weight:800}
-.about-badge-float span{font-size:.75rem;color:var(--muted)}
-.about-image-wrap{position:relative}
-.about-features{margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem}
-.about-feature{display:flex;gap:1rem;align-items:flex-start;padding:1.1rem 1.2rem;border-radius:12px;background:var(--blue-light);border-left:3px solid var(--blue);transition:transform .2s}
-.about-feature:hover{transform:translateX(4px)}
-.about-feature-icon{font-size:1.4rem;flex-shrink:0;margin-top:.1rem}
-.about-feature-text h4{font-size:.95rem;font-weight:700;color:var(--blue-deep);margin-bottom:.2rem}
-.about-feature-text p{font-size:.84rem;color:var(--muted);line-height:1.6}
-
-/* ── SERVICES ── */
-#services{background:var(--off-white)}
-
-/* ── DESTINATIONS ── */
-#destinations{background:var(--white)}
-.dest-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
-.dest-card{border-radius:20px;overflow:hidden;position:relative;cursor:pointer;text-decoration:none;display:block;box-shadow:0 4px 20px rgba(10,79,140,.12);transition:transform .3s,box-shadow .3s}
-.dest-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(10,79,140,.22)}
-.dest-card-img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .4s}
-.dest-card:hover .dest-card-img{transform:scale(1.05)}
-.dest-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,30,60,.85) 0%,rgba(10,30,60,.2) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem 1.25rem}
-.dest-card-flag{width:28px;height:21px;border-radius:3px;margin-bottom:.6rem;box-shadow:0 2px 6px rgba(0,0,0,.3)}
-.dest-card-name{font-size:1.15rem;font-weight:800;color:#fff;line-height:1.2;margin-bottom:.3rem}
-.dest-card-info{font-size:.78rem;color:rgba(255,255,255,.8);line-height:1.4}
-.dest-card-arrow{position:absolute;top:1rem;right:1rem;width:32px;height:32px;background:rgba(255,255,255,.2);backdrop-filter:blur(4px);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;opacity:0;transition:opacity .3s,transform .3s;transform:translateY(-4px)}
-.dest-card:hover .dest-card-arrow{opacity:1;transform:translateY(0)}
-
-/* ── PROCESS ── */
-#process{background:var(--off-white)}
-.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;position:relative}
-.process-steps::before{content:'';position:absolute;top:32px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue-mid));z-index:0}
-.process-step{text-align:center;position:relative;z-index:1;padding:0 .5rem}
-.step-num{width:64px;height:64px;background:linear-gradient(135deg,var(--blue-deep),var(--blue));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:800;color:#fff;margin:0 auto 1.2rem;box-shadow:0 6px 20px rgba(26,143,227,.35)}
-.process-step h4{font-size:1rem;font-weight:700;color:var(--blue-deep);margin-bottom:.4rem}
-.process-step p{font-size:.82rem;color:var(--muted);line-height:1.6}
-
-/* ── VISA TYPES ── */
-#visas{background:var(--white)}
-
-/* ── STATS ── */
-#stats{background:var(--white);padding:5rem 7%}
-.stats-inner{background:linear-gradient(135deg,var(--blue-light),#dff0fb);border-radius:28px;padding:4rem 5%;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
-.stat-big{font-size:3rem;font-weight:800;color:var(--blue);line-height:1}
-.stat-label{font-size:.9rem;color:var(--muted);margin-top:.5rem;font-weight:500}
-
-/* ── TESTIMONIALS ── */
-#testimonials{background:linear-gradient(135deg,var(--blue-deep),var(--blue))}
-#testimonials .section-title{color:#fff}
-#testimonials .section-label{color:rgba(255,255,255,.7)}
-#testimonials .section-desc{color:rgba(255,255,255,.75)}
-.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch}
-.testi-card{background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:2rem 1.75rem;transition:transform .25s,background .25s;display:flex;flex-direction:column}
-.testi-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.18)}
-.testi-stars{color:#FFD700;font-size:.9rem;letter-spacing:.1em;margin-bottom:1rem}
-.testi-text{font-size:.88rem;color:rgba(255,255,255,.9);line-height:1.75;font-style:italic;margin-bottom:1.25rem;flex:1}
-.testi-author{display:flex;align-items:center;gap:.8rem;margin-top:auto}
-.testi-avatar{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.testi-name{font-weight:700;color:#fff;font-size:.9rem}
-.testi-dest{font-size:.75rem;color:rgba(255,255,255,.65);margin-top:.1rem}
-
-/* ── CONTACT ── */
-#contact{background:var(--off-white)}
-.contact-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start}
-.contact-detail{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.75rem}
-.contact-detail-icon{width:46px;height:46px;background:var(--blue-light);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.contact-detail h4{font-size:.875rem;font-weight:700;color:var(--blue-deep);margin-bottom:.2rem}
-.contact-detail p,.contact-detail a{font-size:.875rem;color:var(--muted);line-height:1.55;text-decoration:none}
-.contact-detail a:hover{color:var(--blue)}
-.contact-form{background:#fff;border-radius:24px;padding:2.5rem;box-shadow:0 4px 30px rgba(26,143,227,.1)}
-.contact-form h3{font-size:1.3rem;font-weight:800;color:var(--blue-deep);margin-bottom:1.5rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.fg{margin-bottom:1.2rem}
-.fg label{display:block;font-size:.8rem;font-weight:600;color:var(--text);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.05em}
-.fg input,.fg textarea,.fg select{width:100%;padding:.75rem 1rem;border:2px solid var(--border);border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;color:var(--text);background:var(--off-white);outline:none;transition:border-color .2s,background .2s}
-.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--blue);background:#fff}
-.fg textarea{resize:vertical;min-height:110px}
-.fsub{width:100%;padding:.9rem;background:var(--blue);color:#fff;border:none;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 6px 20px rgba(26,143,227,.3)}
-.fsub:hover{background:var(--blue-dark);transform:translateY(-2px)}
 
 .
 .
@@ -240,13 +113,12 @@ section{padding:6rem 7%}
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){.dest-grid{grid-template-columns:repeat(4,1fr)}
 }
-@media(max-width:960px){#hero{grid-template-columns:1fr;padding:calc(var(--nav-h)+2.5rem) 6% 4rem;gap:3rem;min-height:auto}
+@media(max-width:960px){#hero{grid-template-columns:1fr;padding:calc(var(--nav-h)+2.5rem) 6% 4rem;gap:3rem;min-height:autooverflow-x:hidden;}
   
   
   .hero-desc{margin:0 auto 2rem}
   .hero-actions{justify-content:center}
-  .hero-stats{justify-content:center}
-  #about{grid-template-columns:1fr;gap:2.5rem}
+    #about{grid-template-columns:1fr;gap:2.5rem}
   .about-image-wrap{display:none}
   .dest-grid{grid-template-columns:repeat(2,1fr)}
   .process-steps{grid-template-columns:1fr 1fr;gap:2.5rem}
@@ -264,15 +136,13 @@ section{padding:6rem 7%}
 }
 @media(max-width:640px){section{padding:3.5rem 5%}
   #stats{padding:3.5rem 5%}
-  #hero{padding:calc(var(--nav-h)+1.5rem) 5% 3rem;text-align:center}
+  #hero{padding:calc(var(--nav-h)+1.5rem) 5% 3rem;text-align:centeroverflow-x:hidden;}
   
   .hero-title{font-size:2rem}
   .hero-desc{font-size:.92rem}
   .hero-actions{flex-direction:column;align-items:center;gap:.75rem}
   .hero-actions .btn-primary,.hero-actions .btn-secondary{width:100%;max-width:320px;text-align:center}
-  .hero-stats{gap:1.5rem;justify-content:space-around;flex-wrap:wrap}
-  .hero-stat-num{font-size:1.5rem}
-  .section-title{font-size:1.65rem}
+      .section-title{font-size:1.65rem}
     .dest-grid{grid-template-columns:1fr 1fr;gap:.9rem}
   .dest-card-img{aspect-ratio:3/4}
   .dest-card-name{font-size:1rem}
@@ -291,8 +161,7 @@ section{padding:6rem 7%}
 @media(max-width:400px){.dest-grid{grid-template-columns:1fr}
   .dest-card-img{aspect-ratio:16/9}
   .hero-title{font-size:1.75rem}
-  .hero-stats{flex-direction:column;align-items:center;gap:.75rem}
-    .stats-inner{grid-template-columns:1fr}
+      .stats-inner{grid-template-columns:1fr}
   .testimonials-grid{grid-template-columns:1fr}
 }
 </style>
@@ -352,13 +221,13 @@ section{padding:6rem 7%}
     <p class="section-desc">Comprehensive consultancy and visa services to help you take the next step toward your global ambitions.</p>
   </div>
   <div class="services-grid">
-    <a href="services.html#student-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">🎓</div><h3>Student Visa</h3><p>Expert guidance for international student visa applications, documentation review, and interview preparation.</p></div>
-    <a href="services.html#work-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">💼</div><h3>Work Visa</h3><p>Explore global career opportunities with professional support for work visa applications and documentation.</p></div>
-    <a href="services.html#business-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">🏢</div><h3>Business Visa</h3><p>Expand your professional reach with seamless assistance for international business visa applications.</p></div>
-    <a href="services.html#work-permit" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">📋</div><h3>Work Permit</h3><p>Secure legal authorization to work abroad with expert guidance on international work permit applications.</p></div>
-    <a href="services.html#tourist-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">✈️</div><h3>Tourist Visa</h3><p>Travel the world with confidence through reliable assistance for tourist visa applications.</p></div>
-    <a href="services.html#admissions" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">🧭</div><h3>University Admissions</h3><p>From shortlisting universities to crafting applications and SOPs — we maximise your chances of admission.</p></div>
-    <a href="services.html#passport" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">📝</div><h3>Coaching &amp; Test Prep</h3><p>Dedicated coaching for IELTS, TOEFL, PTE, and other language proficiency exams.</p></div>
+    <a href="services.html#student-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">🎓</div><h3>Student Visa</h3><p>Expert guidance for international student visa applications, documentation review, and interview preparation.</p></a>
+    <a href="services.html#work-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">💼</div><h3>Work Visa</h3><p>Explore global career opportunities with professional support for work visa applications and documentation.</p></a>
+    <a href="services.html#business-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">🏢</div><h3>Business Visa</h3><p>Expand your professional reach with seamless assistance for international business visa applications.</p></a>
+    <a href="services.html#work-permit" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">📋</div><h3>Work Permit</h3><p>Secure legal authorization to work abroad with expert guidance on international work permit applications.</p></a>
+    <a href="services.html#tourist-visa" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">✈️</div><h3>Tourist Visa</h3><p>Travel the world with confidence through reliable assistance for tourist visa applications.</p></a>
+    <a href="services.html#admissions" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">🧭</div><h3>University Admissions</h3><p>From shortlisting universities to crafting applications and SOPs — we maximise your chances of admission.</p></a>
+    <a href="services.html#passport" class="service-card" style="text-decoration:none;color:inherit;display:block"><div class="service-icon">📝</div><h3>Coaching &amp; Test Prep</h3><p>Dedicated coaching for IELTS, TOEFL, PTE, and other language proficiency exams.</p></a>
     <a href="services.html#passport" class="service-card" style="text-decoration:none;color:inherit"><div class="service-icon">🛂</div><h3>Indian Passport</h3><p>Hassle-free passport services for new applications and renewals starting at ₹1,999.</p></a>
   </div>
 </section>
