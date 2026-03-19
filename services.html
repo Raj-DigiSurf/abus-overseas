@@ -152,70 +152,6 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:4rem 7% 2
   .footer-brand p{max-width:100%}
 }
 
-:root{
-  --blue:#1A8FE3; --blue-dark:#1270BE; --blue-deep:#0A4F8C;
-  --blue-light:#E8F4FD; --blue-mid:#4AADEF;
-  --white:#fff; --off-white:#F7FAFD; --text:#0D1B2A;
-  --muted:#5A7089; --border:#D4E8F7; --nav-h:72px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
-h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
-
-/* NAV */
-
-/* MOBILE MENU */
-.mm{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:#fff;padding:1rem 7% 2rem;display:none;flex-direction:column;z-index:999;overflow-y:auto}
-.mm.open{display:flex}
-.mm a{font-size:1.1rem;font-weight:600;color:var(--text);text-decoration:none;padding:1rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.mm a::after{content:'›';color:var(--blue);font-size:1.4rem}
-.mm a.mc{margin-top:1.5rem;background:var(--blue);color:#fff;padding:1rem 1.5rem;border-radius:100px;justify-content:center;box-shadow:0 4px 16px rgba(26,143,227,.3)}
-.mm a.mc::after{display:none}
-
-/* PAGE HERO */
-.ph{padding:calc(var(--nav-h) + 4rem) 7% 4rem;background:linear-gradient(135deg,var(--off-white),#dceffe);position:relative;overflow:hidden;text-align:center}
-.ph::before{content:'';position:absolute;top:-120px;right:-120px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(26,143,227,.12),transparent 70%);pointer-events:none}
-.bc{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--muted);margin-bottom:1rem}
-.bc a{color:var(--blue);text-decoration:none}
-.ph h1{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;color:var(--blue-deep);line-height:1.1;margin-bottom:1rem}
-.ph h1 em{font-style:normal;color:var(--blue)}
-.ph p{font-size:1.05rem;color:var(--muted);line-height:1.75;max-width:580px;margin:0 auto}
-
-/* SERVICE TABS */
-.stw{background:#fff;border-bottom:2px solid var(--border);position:sticky;top:var(--nav-h);z-index:100;box-shadow:0 2px 16px rgba(26,143,227,.07)}
-.stb{display:flex;overflow-x:auto;padding:0 5%;scrollbar-width:none;-ms-overflow-style:none;max-width:1200px;margin:0 auto}
-.stb::-webkit-scrollbar{display:none}
-.tab{padding:1rem 1.25rem;font-size:.82rem;font-weight:600;color:var(--muted);text-decoration:none;white-space:nowrap;border-bottom:3px solid transparent;transition:all .2s;display:flex;align-items:center;gap:.4rem;margin-bottom:-2px}
-.tab:hover{color:var(--blue)}
-.tab.active{color:var(--blue);border-bottom-color:var(--blue)}
-
-/* SERVICE SECTIONS */
-.ss{padding:5rem 7%;border-bottom:1px solid var(--border)}
-.ss:last-of-type{border-bottom:none}
-.si{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
-.si.reverse{direction:rtl}
-.si.reverse>*{direction:ltr}
-
-/* Service Info */
-.stag{display:inline-flex;align-items:center;gap:.5rem;background:var(--blue-light);color:var(--blue-dark);border:1px solid rgba(26,143,227,.2);padding:.3rem .9rem;border-radius:100px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem}
-.sinfo h2{font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:800;color:var(--blue-deep);line-height:1.2;margin-bottom:.8rem}
-.sinfo p{font-size:.95rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem}
-.cl{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text);margin-bottom:.6rem}
-.cts{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem}
-.ctag{display:inline-flex;align-items:center;gap:.35rem;background:#fff;border:1.5px solid var(--border);padding:.3rem .75rem;border-radius:100px;font-size:.78rem;font-weight:500;color:var(--text);transition:all .2s}
-.ctag:hover{border-color:var(--blue);color:var(--blue)}
-
-/* Buttons */
-.btn-p{display:inline-block;background:var(--blue);color:#fff;padding:.75rem 1.75rem;border-radius:100px;font-weight:700;font-size:.9rem;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 6px 24px rgba(26,143,227,.3)}
-.btn-p:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 10px 30px rgba(26,143,227,.4)}
-.btn-o{display:inline-block;background:transparent;color:var(--blue-dark);padding:.75rem 1.75rem;border-radius:100px;font-weight:600;font-size:.9rem;text-decoration:none;border:2px solid var(--blue);cursor:pointer;transition:all .2s;margin-left:.75rem}
-.btn-o:hover{background:var(--blue);color:#fff}
-
-
-/* Service images */
-.svc-img{border-radius:16px;overflow:hidden;margin-bottom:1rem;aspect-ratio:16/9;max-height:260px}
-.svc-img img{width:100%;height:100%;object-fit:cover;display:block}
 @media(max-width:640px){.svc-img{aspect-ratio:16/9;max-height:200px}
 
 /* Process Card */
@@ -403,7 +339,7 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
       <h2>Study Abroad with Confidence</h2>
       <p>Our student visa service covers everything from choosing the right course and university to preparing documentation, writing your Statement of Purpose, and guiding you through the visa interview. We have a 98% student visa approval rate across all destinations.</p>
       <div class="cl">Countries We Cover</div>
-      <div class="cts"><span class="ctag">🇦🇺 Australia</span><span class="ctag">🇨🇦 Canada</span><span class="ctag">🇬🇧 United Kingdom</span><span class="ctag">🇺🇸 USA</span><span class="ctag">🇳🇿 New Zealand</span><span class="ctag">🇮🇪 Ireland</span><span class="ctag">🇦🇪 UAE / Dubai</span><span class="ctag">🇪🇺 Europe</span></div>
+      <div class="cts"><span class="ctag"><img src="https://flagcdn.com/h20/au.png" width="20" height="15" alt="Australia" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Australia</span><span class="ctag"><img src="https://flagcdn.com/h20/ca.png" width="20" height="15" alt="Canada" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Canada</span><span class="ctag"><img src="https://flagcdn.com/h20/gb.png" width="20" height="15" alt="United Kingdom" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> United Kingdom</span><span class="ctag"><img src="https://flagcdn.com/h20/us.png" width="20" height="15" alt="USA" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> USA</span><span class="ctag"><img src="https://flagcdn.com/h20/nz.png" width="20" height="15" alt="New Zealand" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> New Zealand</span><span class="ctag"><img src="https://flagcdn.com/h20/ie.png" width="20" height="15" alt="Ireland" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Ireland</span><span class="ctag"><img src="https://flagcdn.com/h20/ae.png" width="20" height="15" alt="UAE" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> UAE / Dubai</span><span class="ctag"><img src="https://flagcdn.com/h20/eu.png" width="20" height="15" alt="Europe" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Europe</span></div>
       <a href="index.html#contact" class="btn-p">Apply Now →</a>
       <a href="index.html#contact" class="btn-o">Ask a Question</a>
     </div>
@@ -443,7 +379,7 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
       <h2>Build Your Career Globally</h2>
       <p>Whether you're a skilled professional seeking opportunities abroad or transitioning from a student visa, we provide end-to-end support for work visa applications, employer sponsorship guidance, and documentation review.</p>
       <div class="cl">Countries We Cover</div>
-      <div class="cts"><span class="ctag">🇦🇺 Australia</span><span class="ctag">🇨🇦 Canada</span><span class="ctag">🇬🇧 United Kingdom</span><span class="ctag">🇺🇸 USA</span><span class="ctag">🇳🇿 New Zealand</span><span class="ctag">🇦🇪 UAE / Dubai</span><span class="ctag">🇪🇺 Europe</span></div>
+      <div class="cts"><span class="ctag"><img src="https://flagcdn.com/h20/au.png" width="20" height="15" alt="Australia" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Australia</span><span class="ctag"><img src="https://flagcdn.com/h20/ca.png" width="20" height="15" alt="Canada" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Canada</span><span class="ctag"><img src="https://flagcdn.com/h20/gb.png" width="20" height="15" alt="United Kingdom" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> United Kingdom</span><span class="ctag"><img src="https://flagcdn.com/h20/us.png" width="20" height="15" alt="USA" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> USA</span><span class="ctag"><img src="https://flagcdn.com/h20/nz.png" width="20" height="15" alt="New Zealand" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> New Zealand</span><span class="ctag"><img src="https://flagcdn.com/h20/ae.png" width="20" height="15" alt="UAE" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> UAE / Dubai</span><span class="ctag"><img src="https://flagcdn.com/h20/eu.png" width="20" height="15" alt="Europe" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Europe</span></div>
       <a href="index.html#contact" class="btn-p">Apply Now →</a>
       <a href="index.html#contact" class="btn-o">Ask a Question</a>
     </div>
@@ -483,7 +419,7 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
       <h2>Expand Your Business Globally</h2>
       <p>Planning to attend international conferences, meet clients, or explore business opportunities abroad? Our experts ensure your application is accurate, complete, and submitted correctly to maximise approval chances.</p>
       <div class="cl">Countries We Cover</div>
-      <div class="cts"><span class="ctag">🇦🇺 Australia</span><span class="ctag">🇨🇦 Canada</span><span class="ctag">🇬🇧 United Kingdom</span><span class="ctag">🇺🇸 USA</span><span class="ctag">🇸🇬 Singapore</span><span class="ctag">🇦🇪 UAE / Dubai</span><span class="ctag">🇪🇺 Schengen</span></div>
+      <div class="cts"><span class="ctag"><img src="https://flagcdn.com/h20/au.png" width="20" height="15" alt="Australia" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Australia</span><span class="ctag"><img src="https://flagcdn.com/h20/ca.png" width="20" height="15" alt="Canada" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Canada</span><span class="ctag"><img src="https://flagcdn.com/h20/gb.png" width="20" height="15" alt="United Kingdom" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> United Kingdom</span><span class="ctag"><img src="https://flagcdn.com/h20/us.png" width="20" height="15" alt="USA" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> USA</span><span class="ctag"><img src="https://flagcdn.com/h20/sg.png" width="20" height="15" alt="Singapore" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Singapore</span><span class="ctag"><img src="https://flagcdn.com/h20/ae.png" width="20" height="15" alt="UAE" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> UAE / Dubai</span><span class="ctag"><img src="https://flagcdn.com/h20/eu.png" width="20" height="15" alt="Europe" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Schengen</span></div>
       <a href="index.html#contact" class="btn-p">Apply Now →</a>
       <a href="index.html#contact" class="btn-o">Ask a Question</a>
     </div>
@@ -523,7 +459,7 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
       <h2>Legal Authorization to Work Abroad</h2>
       <p>A work permit gives you the legal right to work in a foreign country. Whether you're a fresh graduate or skilled worker, we identify the right permit pathway and manage your application from start to finish.</p>
       <div class="cl">Countries We Cover</div>
-      <div class="cts"><span class="ctag">🇨🇦 Canada (PGWP &amp; LMIA)</span><span class="ctag">🇦🇺 Australia (482 / 186)</span><span class="ctag">🇬🇧 United Kingdom</span><span class="ctag">🇳🇿 New Zealand</span><span class="ctag">🇦🇪 UAE / Dubai</span><span class="ctag">🇪🇺 Europe</span></div>
+      <div class="cts"><span class="ctag"><img src="https://flagcdn.com/h20/ca.png" width="20" height="15" alt="Canada" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Canada (PGWP &amp; LMIA)</span><span class="ctag"><img src="https://flagcdn.com/h20/au.png" width="20" height="15" alt="Australia" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Australia (482 / 186)</span><span class="ctag"><img src="https://flagcdn.com/h20/gb.png" width="20" height="15" alt="United Kingdom" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> United Kingdom</span><span class="ctag"><img src="https://flagcdn.com/h20/nz.png" width="20" height="15" alt="New Zealand" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> New Zealand</span><span class="ctag"><img src="https://flagcdn.com/h20/ae.png" width="20" height="15" alt="UAE" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> UAE / Dubai</span><span class="ctag"><img src="https://flagcdn.com/h20/eu.png" width="20" height="15" alt="Europe" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Europe</span></div>
       <a href="index.html#contact" class="btn-p">Apply Now →</a>
       <a href="index.html#contact" class="btn-o">Ask a Question</a>
     </div>
@@ -563,7 +499,7 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
       <h2>Travel the World, Hassle-Free</h2>
       <p>Planning a holiday, family visit, or leisure trip abroad? We handle tourist visa applications for a wide range of destinations, ensuring your paperwork is complete, accurate, and submitted on time.</p>
       <div class="cl">Popular Destinations</div>
-      <div class="cts"><span class="ctag">🇦🇺 Australia</span><span class="ctag">🇨🇦 Canada</span><span class="ctag">🇬🇧 United Kingdom</span><span class="ctag">🇺🇸 USA</span><span class="ctag">🇦🇪 UAE / Dubai</span><span class="ctag">🇪🇺 Schengen</span><span class="ctag">🇸🇬 Singapore</span><span class="ctag">🇳🇿 New Zealand</span></div>
+      <div class="cts"><span class="ctag"><img src="https://flagcdn.com/h20/au.png" width="20" height="15" alt="Australia" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Australia</span><span class="ctag"><img src="https://flagcdn.com/h20/ca.png" width="20" height="15" alt="Canada" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Canada</span><span class="ctag"><img src="https://flagcdn.com/h20/gb.png" width="20" height="15" alt="United Kingdom" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> United Kingdom</span><span class="ctag"><img src="https://flagcdn.com/h20/us.png" width="20" height="15" alt="USA" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> USA</span><span class="ctag"><img src="https://flagcdn.com/h20/ae.png" width="20" height="15" alt="UAE" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> UAE / Dubai</span><span class="ctag"><img src="https://flagcdn.com/h20/eu.png" width="20" height="15" alt="Europe" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Schengen</span><span class="ctag"><img src="https://flagcdn.com/h20/sg.png" width="20" height="15" alt="Singapore" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Singapore</span><span class="ctag"><img src="https://flagcdn.com/h20/nz.png" width="20" height="15" alt="New Zealand" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> New Zealand</span></div>
       <a href="index.html#contact" class="btn-p">Apply Now →</a>
       <a href="index.html#contact" class="btn-o">Ask a Question</a>
     </div>
@@ -642,7 +578,7 @@ h1,h2,h3,h4,h5{font-family:'Plus Jakarta Sans',sans-serif}
       <h2>Get Into Your Dream University</h2>
       <p>From shortlisting the right universities to crafting a standout application and Statement of Purpose, our admissions experts maximise your chances of acceptance at top institutions worldwide.</p>
       <div class="cl">Partner Universities Include</div>
-      <div class="cts"><span class="ctag">🇺🇸 HULT International</span><span class="ctag">🇬🇧 Coventry University</span><span class="ctag">🇬🇧 Middlesex University</span><span class="ctag">🇬🇧 Univ. of East Anglia</span><span class="ctag">🇮🇪 Univ. of Limerick</span><span class="ctag">🇮🇪 Griffith College</span><span class="ctag">🇺🇸 UMass Boston</span><span class="ctag">🇺🇸 LIU Brooklyn</span><span class="ctag">🇦🇪 Heriot-Watt Dubai</span></div>
+      <div class="cts"><span class="ctag"><img src="https://flagcdn.com/h20/us.png" width="20" height="15" alt="USA" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> HULT International</span><span class="ctag"><img src="https://flagcdn.com/h20/gb.png" width="20" height="15" alt="United Kingdom" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Coventry University</span><span class="ctag"><img src="https://flagcdn.com/h20/gb.png" width="20" height="15" alt="United Kingdom" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Middlesex University</span><span class="ctag"><img src="https://flagcdn.com/h20/gb.png" width="20" height="15" alt="United Kingdom" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Univ. of East Anglia</span><span class="ctag"><img src="https://flagcdn.com/h20/ie.png" width="20" height="15" alt="Ireland" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Univ. of Limerick</span><span class="ctag"><img src="https://flagcdn.com/h20/ie.png" width="20" height="15" alt="Ireland" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Griffith College</span><span class="ctag"><img src="https://flagcdn.com/h20/us.png" width="20" height="15" alt="USA" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> UMass Boston</span><span class="ctag"><img src="https://flagcdn.com/h20/us.png" width="20" height="15" alt="USA" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> LIU Brooklyn</span><span class="ctag"><img src="https://flagcdn.com/h20/ae.png" width="20" height="15" alt="UAE" loading="lazy" style="border-radius:2px;vertical-align:middle;margin-right:3px"> Heriot-Watt Dubai</span></div>
       <a href="index.html#contact" class="btn-p">Apply Now →</a>
       <a href="index.html#contact" class="btn-o">Ask a Question</a>
     </div>
