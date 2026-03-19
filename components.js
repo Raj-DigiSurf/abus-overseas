@@ -1,100 +1,92 @@
-/* ABUS Overseas — Component Loader
- * Loads header.html and footer.html into each page.
- * Usage: <script src="components.js"></script>
- * Place <div id="site-header"></div> and <div id="site-footer"></div> in each page.
- */
-(function() {
-  // Detect current page for active nav highlighting
-  const path = window.location.pathname.split('/').pop() || 'index.html';
-  const isIndex = path === 'index.html' || path === '';
-  const isServices = path === 'services.html';
-  const isDestinations = path === 'destinations.html';
+/* ═══════════════════════════════════════════════
+   ABUS Overseas — Component Loader
+   Loads header.html + footer.html into each page
+   ═══════════════════════════════════════════════ */
+(function () {
 
+  var path = window.location.pathname.split('/').pop() || 'index.html';
+
+  // ── Load a component into a target element ──
   function loadComponent(id, file, callback) {
-    const el = document.getElementById(id);
+    var el = document.getElementById(id);
     if (!el) return;
     fetch(file)
-      .then(r => r.text())
-      .then(html => {
+      .then(function(r) {
+        if (!r.ok) throw new Error(file + ' returned ' + r.status);
+        return r.text();
+      })
+      .then(function(html) {
         el.innerHTML = html;
         if (callback) callback();
       })
-      .catch(err => console.warn('Component load failed:', file, err));
+      .catch(function(err) {
+        console.warn('Component load error:', err);
+      });
   }
 
-    function initHeader() {
-    const path = window.location.pathname.split('/').pop() || 'index.html';
-    const hash = window.location.hash;
-    const isIndex = path === 'index.html' || path === '';
-    const isServices = path === 'services.html';
-    const isDestinations = path === 'destinations.html';
-
-    // Set active nav link based on page
-    function setActiveNav(activeHref) {
-      document.querySelectorAll('#main-nav .nav-links a').forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === activeHref);
-      });
-    }
-
-    if (isServices) setActiveNav('services.html');
-    else if (isDestinations) setActiveNav('destinations.html');
-    else setActiveNav('index.html');
-
-    // On index page — highlight About/Contact when scrolled to those sections
-    if (isIndex) {
-      const sections = [
-        { id: 'about', href: 'index.html#about' },
-        { id: 'contact', href: 'index.html#contact' },
-      ];
-      const navLinks = document.querySelectorAll('#main-nav .nav-links a');
-
-      function updateNavOnScroll() {
-        const scrollY = window.scrollY;
-        const winH = window.innerHeight;
-        let active = 'index.html';
-        sections.forEach(({ id, href }) => {
-          const el = document.getElementById(id);
-          if (el && el.getBoundingClientRect().top < winH * 0.5) active = href;
-        });
-        navLinks.forEach(a => {
-          const href = a.getAttribute('href');
-          // Home active when at top, about/contact active when scrolled to them
-          if (active === 'index.html') {
-            a.classList.toggle('active', href === 'index.html');
-          } else {
-            a.classList.toggle('active', href === active);
-          }
-        });
-      }
-
-      window.addEventListener('scroll', updateNavOnScroll, { passive: true });
-      // Run once on load
-      setTimeout(updateNavOnScroll, 100);
-    }
-
-    // Close menu on outside click
-    document.addEventListener('click', function(e) {
-      const menu = document.getElementById('mobile-menu');
-      const hb = document.getElementById('hamburger');
-      if (menu && menu.classList.contains('open')) {
-        if (!menu.contains(e.target) && !hb.contains(e.target)) {
-          menu.classList.remove('open');
-          hb.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      }
+  // ── Set active nav link based on current page ──
+  function setActiveNav() {
+    var links = document.querySelectorAll('#main-nav .nav-links a[data-page]');
+    links.forEach(function(a) {
+      var page = a.getAttribute('data-page');
+      var isActive =
+        (page === 'home'         && (path === 'index.html' || path === '')) ||
+        (page === 'services'     && path === 'services.html') ||
+        (page === 'destinations' && path === 'destinations.html');
+      a.classList.toggle('active', isActive);
     });
   }
 
-  // Load when DOM ready
+  // ── Nav scroll shadow ──
+  function initNavScroll() {
+    var nav = document.getElementById('main-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 30);
+    }, { passive: true });
+  }
+
+  // ── Active nav on scroll (index page only) ──
+  function initScrollSpy() {
+    if (path !== 'index.html' && path !== '') return;
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('#main-nav .nav-links a');
+    window.addEventListener('scroll', function () {
+      var current = '';
+      sections.forEach(function (sec) {
+        if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+      });
+      navLinks.forEach(function (a) {
+        a.classList.remove('active');
+        var href = a.getAttribute('href');
+        if (href === '#' + current || href === 'index.html#' + current) {
+          a.classList.add('active');
+        }
+        // Home active when at top
+        if (!current && (href === 'index.html' || href === '#')) {
+          a.classList.add('active');
+        }
+      });
+    }, { passive: true });
+  }
+
+  // ── Initialise everything after header loads ──
+  function initHeader() {
+    setActiveNav();
+    initNavScroll();
+    initScrollSpy();
+  }
+
+  // ── Boot ──
+  function init() {
+    loadComponent('site-header', 'header.html', initHeader);
+    loadComponent('site-footer', 'footer.html');
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
   }
 
-  function init() {
-    loadComponent('site-header', 'header.html', initHeader);
-    loadComponent('site-footer', 'footer.html');
-  }
 })();
