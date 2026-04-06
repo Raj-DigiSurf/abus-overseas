@@ -45,7 +45,7 @@ window.handleSubmit = function (btn) {
   var form = btn.closest('.cf') || btn.closest('.contact-form');
   if (!form) return;
 
-  var data = {};
+  var data = { access_key: 'bb3f2467-b2e0-49ef-b6fe-0e23ef9cb892', subject: 'New Consultation Request – ABUS Overseas' };
   form.querySelectorAll('input, select, textarea').forEach(function (el) {
     var fg = el.closest('.fg');
     var label = fg ? fg.querySelector('label') : null;
@@ -56,13 +56,14 @@ window.handleSubmit = function (btn) {
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  fetch('https://formspree.io/f/YOUR_FORM_ID', {
+  fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify(data)
   })
-  .then(function (res) {
-    if (res.ok) {
+  .then(function (res) { return res.json(); })
+  .then(function (json) {
+    if (json.success) {
       btn.textContent = "✅ Request Sent! We'll contact you shortly.";
       btn.style.background = '#27ae60';
     } else {
