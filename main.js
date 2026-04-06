@@ -42,9 +42,40 @@ document.addEventListener('click', function (e) {
 
 /* ── CONTACT FORM ── */
 window.handleSubmit = function (btn) {
-  btn.textContent = "✅ Request Sent! We'll contact you shortly.";
-  btn.style.background = '#27ae60';
+  var form = btn.closest('.cf') || btn.closest('.contact-form');
+  if (!form) return;
+
+  var data = {};
+  form.querySelectorAll('input, select, textarea').forEach(function (el) {
+    var fg = el.closest('.fg');
+    var label = fg ? fg.querySelector('label') : null;
+    var key = label ? label.textContent.trim() : (el.placeholder || el.type || 'field');
+    data[key] = el.value;
+  });
+
+  btn.textContent = 'Sending...';
   btn.disabled = true;
+
+  fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(function (res) {
+    if (res.ok) {
+      btn.textContent = "✅ Request Sent! We'll contact you shortly.";
+      btn.style.background = '#27ae60';
+    } else {
+      btn.textContent = '❌ Something went wrong. Please call us directly.';
+      btn.style.background = '#e74c3c';
+      btn.disabled = false;
+    }
+  })
+  .catch(function () {
+    btn.textContent = '❌ Something went wrong. Please call us directly.';
+    btn.style.background = '#e74c3c';
+    btn.disabled = false;
+  });
 };
 
 /* ── SCROLL REVEAL ── */
